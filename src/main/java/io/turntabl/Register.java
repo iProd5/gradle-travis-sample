@@ -21,6 +21,8 @@ public class Register {
     }
 
     public String getClientNameById(int id){
+
+        //common way
         String getClient = null;
         for (Client client : clients){
             if(client.getId() == id){
@@ -30,6 +32,8 @@ public class Register {
             }
         }
         return getClient;
+
+        //Try with Optional Class
     }
 
     public int countClientsAtEveryServiceLevel(){
