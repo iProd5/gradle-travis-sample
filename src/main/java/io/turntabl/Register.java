@@ -33,7 +33,10 @@ public class Register {
     }
 
     public int countClientsAtEveryServiceLevel(){
-        return clients.size();
+        return  clients.stream().map(Client::getServiceLevel)
+                .filter(rs -> rs != null)
+                .mapToInt(List::size)
+                .sum();
     }
 
 }
